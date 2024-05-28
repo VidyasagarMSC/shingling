@@ -9,13 +9,11 @@ def main(argv):
     parser.add_argument(
         "test_a",
         type=str,
-        default="Generative AI is evolving rapidly.",
         help="text 1 to create shingles",
     )
     parser.add_argument(
         "test_b",
         type=str,
-        default="The field of generative AI evolves swiftly.",
         help="text 2 to create shingles and compare for similarity.",
     )
     parser.add_argument(
@@ -37,20 +35,21 @@ def main(argv):
 
 def create_shingles(text, k=5):
     """Generates a set of shingles for given text."""
-    return set(text[i : i + k] for i in range(len(text) - k + 1))
+    return set(text[i: i + k] for i in range(len(text) - k + 1))
 
 
 def compute_jaccard_similarity(text_a, text_b, k):
     """Calculates the Jaccard similarity between two shingle sets."""
     shingles_a = create_shingles(text_a.lower(), k)
-    print("Shingles for text_a is ",shingles_a)
+    print("Shingles for text_a is ", shingles_a)
     shingles_b = create_shingles(text_b.lower(), k)
     print("Shingles for text_b is ", shingles_b)
     intersection = len(shingles_a & shingles_b)
     union = len(shingles_a | shingles_b)
-    print("Intersection - text_a ∩ text_b", intersection)
-    print("Union - text_a ∪ text_b", union)
+    print("Intersection - text_a ∩ text_b: ", intersection)
+    print("Union - text_a ∪ text_b: ", union)
     return intersection / union
+
 
 if __name__ == "__main__":
     import sys
