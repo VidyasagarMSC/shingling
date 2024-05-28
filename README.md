@@ -9,8 +9,8 @@ usage: shingling.py [-h] [-k K] test_a test_b
 Pass two sentences...
 
 positional arguments:
-  test_a      String 1 to create shingles
-  test_b      The field of generative AI evolves swiftly.
+  test_a      text 1 to create shingles
+  test_b      text 2 to create shingles and compare for similarity.
 
 optional arguments:
   -h, --help  show this help message and exit
