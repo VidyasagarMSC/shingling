@@ -10,13 +10,13 @@ def main(argv):
         "test_a",
         type=str,
         default="Generative AI is evolving rapidly.",
-        help="String 1 to create shingles",
+        help="text 1 to create shingles",
     )
     parser.add_argument(
         "test_b",
         type=str,
-        default="Generative AI is evolving rapidly.",
-        help="The field of generative AI evolves swiftly.",
+        default="The field of generative AI evolves swiftly.",
+        help="text 2 to create shingles and compare for similarity.",
     )
     parser.add_argument(
         "-k",
