@@ -7,12 +7,12 @@ def main(argv):
     # Define arguments
     parser = argparse.ArgumentParser(description="Pass two sentences...")
     parser.add_argument(
-        "test_a",
+        "text_a",
         type=str,
         help="text 1 to create shingles",
     )
     parser.add_argument(
-        "test_b",
+        "text_b",
         type=str,
         help="text 2 to create shingles and compare for similarity.",
     )
@@ -26,7 +26,7 @@ def main(argv):
     args = parser.parse_args(argv[1:])
 
     try:
-        similarity_score = compute_jaccard_similarity(args.test_a, args.test_b, args.k)
+        similarity_score = compute_jaccard_similarity(args.text_a, args.text_b, args.k)
         print(f"Jaccard Similarity: {similarity_score:.4f}")
     except Exception as err:
         print(err)
